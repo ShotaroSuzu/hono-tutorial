@@ -1,1 +1,8 @@
-# hono-tutorial
+```
+npm install
+npm run dev
+```
+
+```
+npm run deploy
+```
