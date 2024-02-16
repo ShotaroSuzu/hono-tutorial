@@ -1,8 +1,7 @@
 import { Hono } from 'hono'
-import { page } from './page'
 import { basicAuth } from 'hono/basic-auth'
 import api from './api'
-
+import page from './page'
 
 const app = new Hono()
 app.use(
@@ -13,6 +12,6 @@ app.use(
   })
 )
 app.route('', api)
+app.route('/page', page)
 
-page(app)
 export default app

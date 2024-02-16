@@ -1,6 +1,6 @@
-import { Env, Hono } from "hono"
-import { BlankSchema } from "hono/types"
+import { Hono } from "hono"
 
+const page = new Hono()
 const View = () => {
   return (
     <html>
@@ -11,8 +11,8 @@ const View = () => {
   )
 }
 
-export function page(app: Hono<Env, BlankSchema, "/">) {
-  app.get('/page', (c) => {
-    return c.html(<View />)
-  })
-}
+page.get('', (c) => {
+  return c.html(<View />)
+})
+
+export default page
