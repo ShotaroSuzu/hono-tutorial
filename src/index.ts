@@ -1,4 +1,6 @@
 import { Hono } from 'hono'
+import { page } from './page'
+
 
 const app = new Hono()
 
@@ -28,4 +30,6 @@ app.get('/posts', (c) => {
 app.delete('/posts/:id', (c) => {
   return c.text(`${c.req.param('id')} is deleted!`)
 })
+
+page(app)
 export default app
